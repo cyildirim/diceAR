@@ -1,27 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SEw-4c-ifa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ARDicee" customModuleProvider="target" sceneMemberID="viewController">
                     <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </arscnView>
+                    <navigationItem key="navigationItem" id="KPs-Rb-RwP">
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" systemItem="refresh" id="kGw-wl-Wv4">
+                                <connections>
+                                    <action selector="refresButtonTapped:" destination="BV1-FR-VrT" id="isk-J3-NMJ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="trash" id="NJJ-XZ-AQA">
+                                <connections>
+                                    <action selector="removeButtonTapped:" destination="BV1-FR-VrT" id="iAK-T6-W9O"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="476" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OS3-fW-n9l">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SEw-4c-ifa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M2L-oJ-BUb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BV1-FR-VrT" kind="relationship" relationship="rootViewController" id="mtP-Mo-fxi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j1U-1D-pr9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-294" y="126"/>
         </scene>
     </scenes>
 </document>
